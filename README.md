@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/984615e2-b830-4d20-be79-2d885fb19e20/deploy-status)](https://app.netlify.com/projects/rutopia-comics/deploys)
+
 # Rutopia
 
 Comic library site: **Home → Library → Series → Comic reader**. Next.js 16 (App Router) + Sanity (Studio embedded at `/studio`), deployed on Netlify.
