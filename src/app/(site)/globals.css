@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #fbf6ea;
+  --color-ink: #1b1a17;
+  --color-muted: #6b6558;
+  --font-display: var(--font-bangers), "Impact", sans-serif;
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  /* faint halftone dots, like cheap comic paper */
+  background-image: radial-gradient(rgb(27 26 23 / 0.06) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* The chunky panel look shared by every button/card. */
+@utility panel {
+  border: 3px solid var(--color-ink);
+  border-radius: 14px;
+  box-shadow: 5px 5px 0 var(--color-ink);
+  transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+@utility panel-hover {
+  &:hover,
+  &:focus-visible {
+    transform: translate(-2px, -2px);
+    box-shadow: 7px 7px 0 var(--color-ink);
+    outline: none;
+  }
+  &:active {
+    transform: translate(3px, 3px);
+    box-shadow: 2px 2px 0 var(--color-ink);
+  }
+}
