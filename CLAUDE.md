@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Rutopia: comic library site. Next.js 16 App Router, React 19, Tailwind 4, Sanity v6 (embedded Studio at `/studio`), Netlify.
+Rutopia: comic library site. Next.js 16 App Router, React 19, Tailwind 4, Sanity v6 (embedded Studio at `/studio`), Vercel.
 
 ## Commands
 npm run dev | npm run build | npm run lint | npm run typecheck

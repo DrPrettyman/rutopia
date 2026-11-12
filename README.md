@@ -1,8 +1,6 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/984615e2-b830-4d20-be79-2d885fb19e20/deploy-status)](https://app.netlify.com/projects/rutopia-comics/deploys)
-
 # Rutopia
 
-Comic library site: **Home → Library → Series → Comic reader**. Next.js 16 (App Router) + Sanity (Studio embedded at `/studio`), deployed on Netlify.
+Comic library site: **Home → Library → Series → Comic reader**. Next.js 16 (App Router) + Sanity (Studio embedded at `/studio`), deployed on Vercel.
 
 ## First-time setup
 
@@ -26,8 +24,9 @@ Comic library site: **Home → Library → Series → Comic reader**. Next.js 16
 
 URLs: `/{library}/{series}/{comic}?p=3`
 
-## Deploying (Netlify)
+## Deploying (Vercel)
 
+- Import the GitHub repo in Vercel; the Next.js preset needs no changes. Node 24 comes from `engines` in `package.json` (`.nvmrc` is for local nvm).
 - Env vars: `NEXT_PUBLIC_SANITY_PROJECT_ID`, `NEXT_PUBLIC_SANITY_DATASET`, `SANITY_REVALIDATE_SECRET`.
 - **Webhook** so new comics appear immediately: sanity.io/manage → API → Webhooks →
   URL `https://<site>/api/revalidate`, dataset `production`, trigger on create/update/delete,
@@ -36,7 +35,7 @@ URLs: `/{library}/{series}/{comic}?p=3`
 
 ## Notes
 
-- Images are resized by Sanity's CDN (custom `next/image` loader in `src/sanity/imageLoader.ts`); Next/Netlify image optimisation is bypassed.
+- Images are resized by Sanity's CDN (custom `next/image` loader in `src/sanity/imageLoader.ts`); Vercel image optimisation is bypassed.
 - The reader (`src/components/ComicReader.tsx`) uses plain `<img srcset>` and preloads the previous/next page. Arrow keys and swipe work.
 - Videos are served straight from Sanity's file CDN. Fine for short clips. If they get long or numerous, look at the Sanity Mux plugin for proper streaming.
 - Fonts (Bangers, Nunito; SIL OFL) are self-hosted in `src/fonts`.

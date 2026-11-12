@@ -1,7 +1,7 @@
 node_modules
 .next
 out
-.netlify
+.vercel
 .env*.local
 .env
 *.tsbuildinfo
