@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EmptyState } from "@/components/EmptyState";
 import { SanityFillImage } from "@/components/SanityImg";
+import { TitleLetters } from "@/components/TitleLetters";
 import { isSanityConfigured } from "@/sanity/env";
 import { sanityFetch } from "@/sanity/lib/client";
 import { librariesQuery } from "@/sanity/lib/queries";
@@ -22,7 +23,10 @@ export default async function HomePage() {
   return (
     <main className="mx-auto max-w-6xl px-4 pb-20 sm:px-6">
       <section className="py-12 text-center sm:py-16">
-        <h1 className="font-display text-7xl tracking-wide sm:text-8xl">Rutopia</h1>
+        <h1>
+          <span className="sr-only">Rutopia</span>
+          <TitleLetters />
+        </h1>
         <p className="mt-3 text-lg text-muted">Pick a library to start reading.</p>
       </section>
 
